@@ -1,0 +1,725 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Programmation Orientée Objet &#8212; Mon Cahier</title>
+    
+  <link rel="stylesheet" href="_static/css/index.73d71520a4ca3b99cfee5594769eaaae.css">
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+  <link rel="stylesheet"
+    href="_static/vendor/open-sans_all/1.44.1/index.css">
+  <link rel="stylesheet"
+    href="_static/vendor/lato_latin-ext/1.44.1/index.css">
+
+    
+    <link rel="stylesheet" href="_static/sphinx-book-theme.40e2e510f6b7d1648584402491bb10fe.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="_static/js/index.3da636dd464baa7582d2.js">
+
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/language_data.js"></script>
+    <script src="_static/togglebutton.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/sphinx-book-theme.d31b09fe5c1d09cb49b26a786de4a05d.js"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Propriétés des objets en POO" href="proprietes_en_poo.html" />
+    <link rel="prev" title="Interfaces graphiques avec Tkinter" href="tkinter.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="index.html">
+  
+  <img src="_static/logo.png" class="logo" alt="logo">
+  
+  
+  <h1 class="site-logo" id="site-title">Mon Cahier</h1>
+  
+</a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="index.html">
+   Introduction
+  </a>
+ </li>
+</ul>
+<ul class="current nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="annalyse_des_donnees-stat.html">
+   Analyse de Données Massives
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="annalyse_des_donnees-stat.html#donnees">
+   Données
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="annalyse_des_donnees-stat.html#statistiques-descriptives-univaries">
+   Statistiques descriptives univariés
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="annalyse_des_donnees-stat.html#histogramme">
+   Histogramme
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="annalyse_des_donnees-stat.html#boites-a-moustaches">
+   Boîtes à moustaches
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="annalyse_des_donnees-stat.html#qualitative">
+   Qualitative
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="annalyse_des_donnees-stat.html#statistiques-descriptives-bivariees">
+   Statistiques descriptives bivariées
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="heritage_class_python.html">
+   Héritage
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="mysql.html">
+   MySql
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="numpy.html">
+   Creation de vecteurs et des matrices
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="numpy.html#extraction-des-valeurs">
+   Extraction des valeurs
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="numpy.html#calcul-sur-les-vecteurs-et-les-matrices">
+   Calcul sur les vecteurs et les matrices:
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="pandas.html">
+   Pandas
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="pandas.html#creation-de-donnees">
+   Création de données
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="pandas.html#lecture-des-donnees">
+   Lecture des données
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="pandas.html#exploration-des-data-frames">
+   Exploration des Data Frames
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="pandas.html#les-attributs-du-data-frame">
+   Les attributs du Data Frame
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="pandas.html#les-methodes-du-data-frame">
+   Les méthodes du Data Frame
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="pandas.html#selection-d-une-colonne-dans-un-data-frame">
+   Sélection d’une colonne dans un Data Frame
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="pandas.html#la-methode-groupby">
+   La méthode groupby
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="pandas.html#filtrage">
+   Filtrage
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="pandas.html#slicing">
+   Slicing
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="pandas.html#selection-des-lignes">
+   Sélection des lignes
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="pandas.html#loc">
+   Loc
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="pandas.html#tri">
+   Tri
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="pandas.html#valeurs-manquantes">
+   Valeurs manquantes
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="interface_pyqt.html">
+   Interfaces graphiques avec PyQt
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="tkinter.html">
+   Interfaces graphiques avec Tkinter
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Programmation Orientée Objet
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="proprietes_en_poo.html">
+   Propriétés des objets en POO
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="python_module_os.html">
+   Python - Le module OS
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="python_lecture_fichier.html">
+   Python Traitement de fichiers
+  </a>
+ </li>
+</ul>
+
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="row topbar fixed-top container-xl">
+    <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show">
+    </div>
+    <div class="col pl-2 topbar-main">
+        
+        <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+            data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+            aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+            title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+            <i class="fas fa-bars"></i>
+            <i class="fas fa-arrow-left"></i>
+            <i class="fas fa-arrow-up"></i>
+        </button>
+        
+        
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="_sources/poo.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+        <!-- Source interaction buttons -->
+
+
+        <!-- Full screen (wrap in <a> to have style consistency -->
+        <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+                title="Fullscreen mode"><i
+                    class="fas fa-expand"></i></button></a>
+
+        <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/poo.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+    </div>
+
+    <!-- Table of contents -->
+    <div class="d-none d-md-block col-md-2 bd-toc show">
+        
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i> Contents
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#definition">
+   Définition
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#les-objets-dans-python">
+   Les objets dans Python
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#constructeur">
+   Constructeur
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#methodes">
+   Méthodes
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#collection-d-objets">
+   Collection d’objets
+  </a>
+ </li>
+</ul>
+
+        </nav>
+        
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="programmation-orientee-objet">
+<h1>Programmation Orientée Objet<a class="headerlink" href="#programmation-orientee-objet" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="definition">
+<h2>Définition<a class="headerlink" href="#definition" title="Permalink to this headline">¶</a></h2>
+<p>Citation de Steve Job :
+<a class="reference external" href="https://www.developpez.com/actu/91705/Comment-pourriez-vous-expliquer-l-oriente-objet-Steve-Jobs-a-essaye-d-expliquer-ce-concept/">Article sur Developpez.com</a></p>
+</div>
+<div class="section" id="les-objets-dans-python">
+<h2>Les objets dans Python<a class="headerlink" href="#les-objets-dans-python" title="Permalink to this headline">¶</a></h2>
+<p>Un objet est composé d’une classe est d’une instance. La classe est le code qui permet de créer l’objet. Elle se déclare, un peu comme une fonction, mais le code n’est pas éxécuté. Les instances sont des variables qui permettent de manipuler les objets dans le code. En python :</p>
+<ul class="simple">
+<li><p>une classe se déclare ainsi : <code class="docutils literal notranslate"><span class="pre">class</span> <span class="pre">Nom_classe</span> <span class="pre">:</span></code>.</p></li>
+<li><p>une instance se créée en initialisant une variable avec un constructeur : <code class="docutils literal notranslate"><span class="pre">var1</span> <span class="pre">=</span> <span class="pre">Nom_classe()</span></code></p></li>
+</ul>
+<p>Le constructeur est le nom de la classe suivi de ().</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#déclaration d&#39;une classe, qui est le modèle pour les objets</span>
+<span class="k">class</span> <span class="nc">Monty</span><span class="p">:</span>
+    <span class="k">pass</span>
+
+<span class="c1">#fonction main() pour le programme principal</span>
+<span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
+    <span class="c1">#création d&#39;instances de classe Monty, qui permet la manipulation d&#39;objets créés à partir de cette classe</span>
+    <span class="n">monty1</span> <span class="o">=</span> <span class="n">Monty</span><span class="p">()</span>
+    <span class="n">monty2</span> <span class="o">=</span> <span class="n">Monty</span><span class="p">()</span>
+
+    <span class="c1">#Les variables contiennent les espaces mémoires des objets</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">monty1</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">monty2</span><span class="p">)</span>
+
+<span class="n">main</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;__main__.Monty object at 0x0000021B73EF8190&gt;
+&lt;__main__.Monty object at 0x0000021B73EF8340&gt;
+</pre></div>
+</div>
+</div>
+</div>
+<p>A partir d’une classe, il est possible de créer autant d’instances que besoin. Dans le code au-dessus, les deux instances <em>monty1</em> et <em>monty2</em> sont créées à partir de la classe <em>Monty</em>. Bien que tous les deux de type <em>Monty</em>, ils sont deux objets différents.</p>
+</div>
+<div class="section" id="constructeur">
+<h2>Constructeur<a class="headerlink" href="#constructeur" title="Permalink to this headline">¶</a></h2>
+<p>Le constructeur retourne l’espace mémoire atttribué à l’objet. C’est ce qui permet de manipuler l’objet dans le code. A chaque création d’une instance, un espace mémoire différent est alloué. C’est ainsi que le compilateur fait la différence entre plusieurs instances de même classe.</p>
+<p>Il est possible de surcharger le constructeur pour exécuter du code à la création de l’objet. En général, cela sert à initialiser certaines valeurs. Pour cela, il faut mettre ce code dans la fonction <code class="docutils literal notranslate"><span class="pre">__init__(self)</span> <span class="pre">:</span></code>, définie dans la classe elle-même.Attention, puisque le constructeur retourne l’emplacement mémoire de l’objet, il ne peut retrouner rien d’autre. <strong>Il n’y a jamais de <code class="docutils literal notranslate"><span class="pre">return</span></code>dans un constructeur</strong>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Monty</span><span class="p">:</span>
+    <span class="c1">#surcharge du constructeur</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="c1">#self est l&#39;objet lui-même</span>
+        <span class="nb">print</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+        <span class="c1">#initialisation d&#39;une variable d&#39;instance &quot;metier&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">metier</span> <span class="o">=</span> <span class="s2">&quot;comédien&quot;</span>
+
+<span class="c1">#fonction main() pour le programme principal</span>
+<span class="k">def</span> <span class="nf">main</span><span class="p">()</span> <span class="p">:</span>
+    <span class="c1">#instanciation de 2 objets de type Monty</span>
+    <span class="n">monty1</span> <span class="o">=</span> <span class="n">Monty</span><span class="p">()</span>
+    <span class="n">monty2</span> <span class="o">=</span> <span class="n">Monty</span><span class="p">()</span>
+
+    <span class="nb">print</span><span class="p">(</span><span class="n">monty1</span><span class="p">)</span>
+    <span class="nb">print</span> <span class="p">(</span><span class="n">monty1</span><span class="o">.</span><span class="n">metier</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">monty2</span><span class="p">)</span>
+    <span class="nb">print</span> <span class="p">(</span><span class="n">monty2</span><span class="o">.</span><span class="n">metier</span><span class="p">)</span>
+
+    <span class="c1">#accès en écriture à la variable d&#39;instance &quot;metier&quot;</span>
+    <span class="n">monty2</span><span class="o">.</span><span class="n">metier</span> <span class="o">=</span> <span class="s2">&quot;réalisateur&quot;</span>
+    <span class="c1">#accès en lecture à la variable d&#39;instance &quot;metier&quot;</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">monty2</span><span class="o">.</span><span class="n">metier</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">monty1</span><span class="o">.</span><span class="n">metier</span><span class="p">)</span>
+
+<span class="n">main</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;__main__.Monty object at 0x0000021B73EF8460&gt;
+&lt;__main__.Monty object at 0x0000021B73FA65E0&gt;
+&lt;__main__.Monty object at 0x0000021B73EF8460&gt;
+comédien
+&lt;__main__.Monty object at 0x0000021B73FA65E0&gt;
+comédien
+réalisateur
+comédien
+</pre></div>
+</div>
+</div>
+</div>
+<p>Par convention, <code class="docutils literal notranslate"><span class="pre">self</span></code>est toujours passé en argument au constructeur. Il fait référence à l’objet lui-même (et contient donc sont emplacement mémoire, comme le prouve le code ci-dessus).
+<code class="docutils literal notranslate"><span class="pre">self.var</span></code>permet d’initialiser une variable. Cette variable est mise en mémoire dans l’objet. Pour la lire, ou la modifier, il suffit de faire <code class="docutils literal notranslate"><span class="pre">moninstance.var</span></code>. Le point est l’opérateur qui permet de trouver les variables dans l’objet.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Monty</span><span class="p">:</span>
+    <span class="c1">#constructeur avec une valeur d&#39;initialisation en paramètre</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">nom</span><span class="p">):</span>
+        <span class="c1">#initialisation d&#39;une variable à partir d&#39;un paramètre</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">nom</span> <span class="o">=</span> <span class="n">nom</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">metier</span> <span class="o">=</span> <span class="s2">&quot;comédien&quot;</span>
+
+<span class="c1">#fonction main() pour le programme principal</span>
+<span class="k">def</span> <span class="nf">main</span><span class="p">()</span> <span class="p">:</span>
+    <span class="c1">#création d&#39;instances avec passage de valeurs en paramètre</span>
+    <span class="n">monty1</span> <span class="o">=</span> <span class="n">Monty</span><span class="p">(</span><span class="s2">&quot;Cleese&quot;</span><span class="p">)</span>
+    <span class="n">monty2</span> <span class="o">=</span> <span class="n">Monty</span><span class="p">(</span><span class="s2">&quot;Gilliam&quot;</span><span class="p">)</span>
+    <span class="nb">print</span> <span class="p">(</span><span class="n">monty1</span><span class="o">.</span><span class="n">nom</span><span class="p">)</span>
+    <span class="nb">print</span> <span class="p">(</span><span class="n">monty2</span><span class="o">.</span><span class="n">nom</span><span class="p">)</span>
+    
+<span class="n">main</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Cleese
+Gilliam
+</pre></div>
+</div>
+</div>
+</div>
+<p>Il est possible d’initialiser les variables d’instance à la création en passant les valeurs en paramètre. Puis, dans le constructeur, il est suffit des les attribuer <code class="docutils literal notranslate"><span class="pre">self.var</span> <span class="pre">=</span> <span class="pre">parametre</span></code>.</p>
+<p>Vous pouvez créer autant de variables d’instance que vous avez besoin. De même, il est possible de passer en paramètre autant de valeurs que besoin.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Monty</span><span class="p">:</span>
+    <span class="c1">#dictionnaire d&#39;une taille indéterminée en paramètre</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">infos</span><span class="p">):</span>
+        <span class="c1">#parcours le dictionnaire pour récupérer les clés et les valeurs</span>
+        <span class="k">for</span> <span class="n">variable</span><span class="p">,</span> <span class="n">valeur</span> <span class="ow">in</span> <span class="n">infos</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+            <span class="c1">#création de variable avec la clé et initialisation avec la valeur</span>
+            <span class="nb">setattr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">variable</span><span class="p">,</span> <span class="n">valeur</span><span class="p">)</span>
+            
+<span class="c1">#Fonction main() pour le programme principal</span>
+<span class="k">def</span> <span class="nf">main</span><span class="p">()</span> <span class="p">:</span>
+    <span class="c1">#dictionnaire            </span>
+    <span class="n">infos1</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;nom&quot;</span><span class="p">:</span><span class="s2">&quot;Cleese&quot;</span><span class="p">,</span> <span class="s2">&quot;metier&quot;</span><span class="p">:</span><span class="s2">&quot;comédien&quot;</span><span class="p">}</span>
+    <span class="n">infos2</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;nom&quot;</span><span class="p">:</span><span class="s2">&quot;Gilliam&quot;</span><span class="p">,</span> <span class="s2">&quot;metier&quot;</span><span class="p">:</span><span class="s2">&quot;réalisateur&quot;</span><span class="p">}</span>
+
+    <span class="c1">#passage de dictionnaires en paramètre</span>
+    <span class="n">monty1</span> <span class="o">=</span> <span class="n">Monty</span><span class="p">(</span><span class="o">**</span><span class="n">infos1</span><span class="p">)</span>
+    <span class="n">monty2</span> <span class="o">=</span> <span class="n">Monty</span><span class="p">(</span><span class="o">**</span><span class="n">infos2</span><span class="p">)</span>
+
+    <span class="c1">#les variables du dictionnaire sont accessibles dans l&#39;objet</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">monty1</span><span class="o">.</span><span class="n">nom</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">monty2</span><span class="o">.</span><span class="n">nom</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">monty2</span><span class="o">.</span><span class="n">metier</span><span class="p">)</span>
+    
+<span class="n">main</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Cleese
+Gilliam
+réalisateur
+</pre></div>
+</div>
+</div>
+</div>
+<p>Lorsqu’il y a plusieurs variables à initialiser, il est possible de passer un dictionnaire en paramètre du constructeur. <code class="docutils literal notranslate"><span class="pre">**</span></code>.Ce dictionnaire contient les noms et les valeurs des variables. Dans ce cas il faut signaler que nous avons un paramètres de taille indéterminée grâce au <code class="docutils literal notranslate"><span class="pre">**</span></code>.
+Il faut le faire à la déclaration du constructeur et lors de son appel dans le code.
+Ensuite, dans le constructeur, il suffit de parcourir le dictionnaire et d’utiliser la fonction <code class="docutils literal notranslate"><span class="pre">setattr(self,</span> <span class="pre">nom_variable,</span> <span class="pre">valeur_variable)</span></code>. Ainsi, toutes les variables d’instances sont créées automatiquement.</p>
+</div>
+<div class="section" id="methodes">
+<h2>Méthodes<a class="headerlink" href="#methodes" title="Permalink to this headline">¶</a></h2>
+<p>Une classe peut aussi contenir des fonctions, dans ce cas, elles sont appelées <em>méthodes</em>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Monty</span><span class="p">:</span>
+    
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">nom</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">nom</span> <span class="o">=</span> <span class="n">nom</span>
+        
+    <span class="c1"># méthode saluer(), déclarée comme une fonction</span>
+    <span class="k">def</span> <span class="nf">saluer</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">qui</span><span class="p">)</span> <span class="p">:</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">nom</span> <span class="o">+</span> <span class="s2">&quot; dit bonjour à &quot;</span> <span class="o">+</span> <span class="n">qui</span>
+    
+<span class="c1">#fonction main() pour le programme principal</span>
+<span class="k">def</span> <span class="nf">main</span><span class="p">()</span> <span class="p">:</span>
+    <span class="n">monty1</span> <span class="o">=</span> <span class="n">Monty</span><span class="p">(</span><span class="s2">&quot;Cleese&quot;</span><span class="p">)</span>
+    <span class="n">monty2</span> <span class="o">=</span> <span class="n">Monty</span><span class="p">(</span><span class="s2">&quot;Gilliam&quot;</span><span class="p">)</span>
+    <span class="nb">print</span> <span class="p">(</span><span class="n">monty1</span><span class="o">.</span><span class="n">saluer</span><span class="p">(</span><span class="n">monty2</span><span class="o">.</span><span class="n">nom</span><span class="p">))</span>
+    
+<span class="n">main</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Cleese dit bonjour à Gilliam
+</pre></div>
+</div>
+</div>
+</div>
+<p>Une méthode se déclare comme une fonction, mais dans la classe. Pour l’appeler, il faut le faire avec une instance. Comme pour les variables, il faut utiliser le point pour l’appeler avec une instance. Par convention, la méthode prend toujours <code class="docutils literal notranslate"><span class="pre">self</span></code>en paramètre. Contrairement au constructuer, la méthode peut avoir un <code class="docutils literal notranslate"><span class="pre">return</span></code> et prend autant de paramètre qu’il y a besoin.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">datetime</span>
+
+<span class="k">class</span> <span class="nc">Monty</span><span class="p">:</span>
+    
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">nom</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">nom</span> <span class="o">=</span> <span class="n">nom</span>
+        
+    <span class="c1"># méthode saluer(), déclarée comme une fonction</span>
+    <span class="k">def</span> <span class="nf">saluer</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">qui</span><span class="p">)</span> <span class="p">:</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">nom</span> <span class="o">+</span> <span class="s2">&quot; dit : &quot;</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">formuler_salut</span><span class="p">(</span><span class="n">qui</span><span class="p">)</span>
+    
+    <span class="c1">#méthode qui ne sert que dans la classe</span>
+    <span class="k">def</span> <span class="nf">formuler_salut</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">qui</span><span class="p">)</span> <span class="p">:</span>
+        <span class="n">formule</span> <span class="o">=</span> <span class="s2">&quot;Good morning &quot;</span>
+        <span class="n">heure</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span><span class="o">.</span><span class="n">hour</span>
+        
+        <span class="k">if</span><span class="p">(</span><span class="n">heure</span> <span class="o">&gt;</span> <span class="mi">11</span><span class="p">)</span> <span class="p">:</span>
+            <span class="n">formule</span> <span class="o">=</span> <span class="s2">&quot;Good afternoon &quot;</span>
+        <span class="k">if</span><span class="p">(</span><span class="n">heure</span> <span class="o">&gt;</span> <span class="mi">18</span><span class="p">)</span> <span class="p">:</span>
+            <span class="n">formule</span> <span class="o">=</span> <span class="s2">&quot;Good evening &quot;</span>
+            
+        <span class="k">return</span> <span class="n">formule</span> <span class="o">+</span> <span class="n">qui</span>
+    
+<span class="c1">#fonction main() pour le programme principal</span>
+<span class="k">def</span> <span class="nf">main</span><span class="p">()</span> <span class="p">:</span>
+    <span class="n">monty1</span> <span class="o">=</span> <span class="n">Monty</span><span class="p">(</span><span class="s2">&quot;Cleese&quot;</span><span class="p">)</span>
+    <span class="n">monty2</span> <span class="o">=</span> <span class="n">Monty</span><span class="p">(</span><span class="s2">&quot;Gilliam&quot;</span><span class="p">)</span>
+    <span class="nb">print</span> <span class="p">(</span><span class="n">monty1</span><span class="o">.</span><span class="n">saluer</span><span class="p">(</span><span class="n">monty2</span><span class="o">.</span><span class="n">nom</span><span class="p">))</span>
+    
+<span class="n">main</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Cleese dit : Good evening Gilliam
+</pre></div>
+</div>
+</div>
+</div>
+<p>une méthode peut être appelée dans une autre méthode en utilisant le self : <code class="docutils literal notranslate"><span class="pre">self.methode()</span></code>.</p>
+</div>
+<div class="section" id="collection-d-objets">
+<h2>Collection d’objets<a class="headerlink" href="#collection-d-objets" title="Permalink to this headline">¶</a></h2>
+<p>Puisque l’avantage des objets est d’en instancier autant que voulu, il n’est pas rare de le faire sous forme de collection.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Monty</span><span class="p">:</span>
+    
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">infos</span><span class="p">):</span>
+        <span class="c1">#parcours le dictionnaire pour récupérer les clés et les valeurs</span>
+        <span class="k">for</span> <span class="n">variable</span><span class="p">,</span> <span class="n">valeur</span> <span class="ow">in</span> <span class="n">infos</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+            <span class="c1">#création de variable avec la clé et initialisation avec la valeur</span>
+            <span class="nb">setattr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">variable</span><span class="p">,</span> <span class="n">valeur</span><span class="p">)</span>
+        
+<span class="c1">#lire data</span>
+<span class="k">def</span> <span class="nf">lire_data</span><span class="p">():</span>
+    <span class="c1">#ce dictionnaire simule la lecture d&#39;une source de données</span>
+    <span class="n">equipe</span> <span class="o">=</span> <span class="p">[{</span><span class="s2">&quot;nom&quot;</span> <span class="p">:</span> <span class="s2">&quot;Cleese&quot;</span><span class="p">,</span> <span class="s2">&quot;metier&quot;</span><span class="p">:</span><span class="s2">&quot;comédien&quot;</span><span class="p">},</span> <span class="p">{</span><span class="s2">&quot;nom&quot;</span> <span class="p">:</span> <span class="s2">&quot;Gilliam&quot;</span><span class="p">,</span><span class="s2">&quot;metier&quot;</span><span class="p">:</span><span class="s2">&quot;realisateur&quot;</span><span class="p">},</span> <span class="p">{</span><span class="s2">&quot;nom&quot;</span><span class="p">:</span><span class="s2">&quot;Chapman&quot;</span><span class="p">,</span> <span class="s2">&quot;metier&quot;</span><span class="p">:</span><span class="s2">&quot;comédien&quot;</span><span class="p">},</span> <span class="p">{</span><span class="s2">&quot;nom&quot;</span><span class="p">:</span><span class="s2">&quot;Jones&quot;</span><span class="p">,</span> <span class="s2">&quot;metier&quot;</span><span class="p">:</span><span class="s2">&quot;comédien&quot;</span><span class="p">},</span> <span class="p">{</span><span class="s2">&quot;nom&quot;</span><span class="p">:</span><span class="s2">&quot;Palin&quot;</span><span class="p">,</span> <span class="s2">&quot;metier&quot;</span><span class="p">:</span><span class="s2">&quot;comédien&quot;</span><span class="p">},{</span><span class="s2">&quot;nom&quot;</span><span class="p">:</span><span class="s2">&quot;Idle&quot;</span><span class="p">,</span> <span class="s2">&quot;metier&quot;</span><span class="p">:</span><span class="s2">&quot;comédien&quot;</span><span class="p">}]</span>
+    <span class="k">return</span> <span class="n">equipe</span>
+    
+<span class="c1">#fonction main() pour le programme principal</span>
+<span class="k">def</span> <span class="nf">main</span><span class="p">()</span> <span class="p">:</span>
+    <span class="n">membres</span> <span class="o">=</span> <span class="n">lire_data</span><span class="p">()</span>
+    <span class="n">objets</span> <span class="o">=</span> <span class="p">[]</span>
+    
+    <span class="c1">#boucle pour créer une collection d&#39;objets</span>
+    <span class="k">for</span> <span class="n">membre</span> <span class="ow">in</span> <span class="n">membres</span> <span class="p">:</span>
+            <span class="n">nouveau</span> <span class="o">=</span> <span class="n">Monty</span><span class="p">(</span><span class="o">**</span><span class="n">membre</span><span class="p">)</span>
+            <span class="n">objets</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">nouveau</span><span class="p">)</span>
+    
+    <span class="c1">#boucle pour parcourir la collection d&#39;objets</span>
+    <span class="k">for</span> <span class="n">monty</span> <span class="ow">in</span> <span class="n">objets</span> <span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">monty</span><span class="o">.</span><span class="n">nom</span><span class="p">)</span>
+    
+<span class="n">main</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Cleese
+Gilliam
+Chapman
+Jones
+Palin
+Idle
+</pre></div>
+</div>
+</div>
+</div>
+<p>L’avantage de la collection c’est qu’il n’y a besoin d’une variable par instance puisqu’elles sont toutes stockées dans une liste (ou un dictionnaire, c’est aussi possible). Il suffit alors de la parcourir pour travailler avec les instances.</p>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        </div>
+    </div>
+    
+    
+    <div class='prev-next-bottom'>
+        
+    <a class='left-prev' id="prev-link" href="tkinter.html" title="previous page">Interfaces graphiques avec Tkinter</a>
+    <a class='right-next' id="next-link" href="proprietes_en_poo.html" title="next page">Propriétés des objets en POO</a>
+
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By The Jupyter Book community<br/>
+        
+            &copy; Copyright 2020.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    
+  <script src="_static/js/index.3da636dd464baa7582d2.js"></script>
+
+
+    
+  </body>
+</html>

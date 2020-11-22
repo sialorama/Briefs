@@ -1,0 +1,1579 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Analyse de Données Massives &#8212; Mon Cahier</title>
+    
+  <link rel="stylesheet" href="_static/css/index.73d71520a4ca3b99cfee5594769eaaae.css">
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+  <link rel="stylesheet"
+    href="_static/vendor/open-sans_all/1.44.1/index.css">
+  <link rel="stylesheet"
+    href="_static/vendor/lato_latin-ext/1.44.1/index.css">
+
+    
+    <link rel="stylesheet" href="_static/sphinx-book-theme.40e2e510f6b7d1648584402491bb10fe.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="_static/js/index.3da636dd464baa7582d2.js">
+
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/language_data.js"></script>
+    <script src="_static/togglebutton.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/sphinx-book-theme.d31b09fe5c1d09cb49b26a786de4a05d.js"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Héritage" href="heritage_class_python.html" />
+    <link rel="prev" title="Introduction" href="index.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="index.html">
+  
+  <img src="_static/logo.png" class="logo" alt="logo">
+  
+  
+  <h1 class="site-logo" id="site-title">Mon Cahier</h1>
+  
+</a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="index.html">
+   Introduction
+  </a>
+ </li>
+</ul>
+<ul class="current nav sidenav_l1">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Analyse de Données Massives
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="#donnees">
+   Données
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="#statistiques-descriptives-univaries">
+   Statistiques descriptives univariés
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="#histogramme">
+   Histogramme
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="#boites-a-moustaches">
+   Boîtes à moustaches
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="#qualitative">
+   Qualitative
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="#statistiques-descriptives-bivariees">
+   Statistiques descriptives bivariées
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="heritage_class_python.html">
+   Héritage
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="mysql.html">
+   MySql
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="numpy.html">
+   Creation de vecteurs et des matrices
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="numpy.html#extraction-des-valeurs">
+   Extraction des valeurs
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="numpy.html#calcul-sur-les-vecteurs-et-les-matrices">
+   Calcul sur les vecteurs et les matrices:
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="pandas.html">
+   Pandas
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="pandas.html#creation-de-donnees">
+   Création de données
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="pandas.html#lecture-des-donnees">
+   Lecture des données
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="pandas.html#exploration-des-data-frames">
+   Exploration des Data Frames
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="pandas.html#les-attributs-du-data-frame">
+   Les attributs du Data Frame
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="pandas.html#les-methodes-du-data-frame">
+   Les méthodes du Data Frame
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="pandas.html#selection-d-une-colonne-dans-un-data-frame">
+   Sélection d’une colonne dans un Data Frame
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="pandas.html#la-methode-groupby">
+   La méthode groupby
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="pandas.html#filtrage">
+   Filtrage
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="pandas.html#slicing">
+   Slicing
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="pandas.html#selection-des-lignes">
+   Sélection des lignes
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="pandas.html#loc">
+   Loc
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="pandas.html#tri">
+   Tri
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="pandas.html#valeurs-manquantes">
+   Valeurs manquantes
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="interface_pyqt.html">
+   Interfaces graphiques avec PyQt
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="tkinter.html">
+   Interfaces graphiques avec Tkinter
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="poo.html">
+   Programmation Orientée Objet
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="proprietes_en_poo.html">
+   Propriétés des objets en POO
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="python_module_os.html">
+   Python - Le module OS
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="python_lecture_fichier.html">
+   Python Traitement de fichiers
+  </a>
+ </li>
+</ul>
+
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="row topbar fixed-top container-xl">
+    <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show">
+    </div>
+    <div class="col pl-2 topbar-main">
+        
+        <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+            data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+            aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+            title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+            <i class="fas fa-bars"></i>
+            <i class="fas fa-arrow-left"></i>
+            <i class="fas fa-arrow-up"></i>
+        </button>
+        
+        
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="_sources/annalyse_des_donnees-stat.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+        <!-- Source interaction buttons -->
+
+
+        <!-- Full screen (wrap in <a> to have style consistency -->
+        <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+                title="Fullscreen mode"><i
+                    class="fas fa-expand"></i></button></a>
+
+        <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/annalyse_des_donnees-stat.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+    </div>
+
+    <!-- Table of contents -->
+    <div class="d-none d-md-block col-md-2 bd-toc show">
+        
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i> Contents
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   Analyse de Données Massives
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#donnees">
+   Données
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#statistiques-descriptives-univaries">
+   Statistiques descriptives univariés
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#histogramme">
+   Histogramme
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#boites-a-moustaches">
+   Boîtes à moustaches
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#qualitative">
+   Qualitative
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#diagramme-en-barres">
+     Diagramme en barres
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#diagramme-circulaire">
+     Diagramme circulaire
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#statistiques-descriptives-bivariees">
+   Statistiques descriptives bivariées
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#quantitative">
+     Quantitative
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#nuage-de-points">
+     Nuage de points
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id1">
+     Qualitative
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id2">
+     Diagramme en barres
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+        </nav>
+        
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <h1><center> Statistiques sous Python (avec Pandas) </center></h1>
+<div class="section" id="analyse-de-donnees-massives">
+<h1>Analyse de Données Massives<a class="headerlink" href="#analyse-de-donnees-massives" title="Permalink to this headline">¶</a></h1>
+<p>Nous allons utiliser dans cet exercice le module pandas permettant l’analyse de données avec Python. La première instruction est d’installer le module, à faire dans un terminale de commande.
+<br></p>
+<ul class="simple">
+<li><p>pip install pandas</p></li>
+<li><p>pip install numpy</p></li>
+</ul>
+<p>Une fois le module est installé, nous pouvons lancer un notebook pour commencer notre programme. Il faut tout d’abord importer le module.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Importatioon du module pandas</span>
+
+<span class="kn">import</span> <span class="nn">pandas</span>
+<span class="kn">import</span> <span class="nn">numpy</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="donnees">
+<h1>Données<a class="headerlink" href="#donnees" title="Permalink to this headline">¶</a></h1>
+<p>Nous allons travailler sur des données collectées par un serveur (data.csv). Il a enregistré des informations sur chaque pourboire qu’il a reçu sur une période de quelques mois en travaillant dans un restaurant. Il a collecté plusieurs variables:</p>
+<ol class="simple">
+<li><p>facture en dollars,</p></li>
+<li><p>pourboire en dollars,</p></li>
+<li><p>sexe du payeur de factures,</p></li>
+<li><p>s’il y avait des fumeurs dans la fête,</p></li>
+<li><p>jour de la semaine,</p></li>
+<li><p>moment de la journée,</p></li>
+<li><p>taille de la fête.</p></li>
+</ol>
+<ul class="simple">
+<li><p>Lire ces données dans le <code>Notebook</code> avec <code>read_csv()</code> de <code>pandas</code>.</p></p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Lecture d&#39;un fichier csv avec pandas</span>
+
+<span class="n">tips</span> <span class="o">=</span> <span class="n">pandas</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;serveur.csv&quot;</span><span class="p">,</span><span class="n">sep</span> <span class="o">=</span> <span class="s2">&quot;,&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Sur ces données, il est bien évidemment possible de voir quelques informations classiques.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Type des données</span>
+
+<span class="nb">type</span><span class="p">(</span><span class="n">tips</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>pandas.core.frame.DataFrame
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Taille</span>
+
+<span class="n">tips</span><span class="o">.</span><span class="n">shape</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(244, 7)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#nombre d&#39;observation par champs</span>
+<span class="n">tips</span><span class="o">.</span><span class="n">count</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>facture      244
+pourboire    244
+sex          244
+Fumeur       244
+Jour         244
+temps        244
+size         244
+dtype: int64
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Afficher l&#39;entête du jeu de données dans une liste</span>
+
+<span class="c1"># list(tips.columns)</span>
+<span class="nb">list</span><span class="p">(</span><span class="n">tips</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;facture&#39;, &#39;pourboire&#39;, &#39;sex&#39;, &#39;Fumeur&#39;, &#39;Jour&#39;, &#39;temps&#39;, &#39;size&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="statistiques-descriptives-univaries">
+<h1>Statistiques descriptives univariés<a class="headerlink" href="#statistiques-descriptives-univaries" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li><p>Décrire et afficher toutes les variables quantitatives du jeu de données directement (fichier csv).
+ex: nombre d’obseravtions, moyenne, écart-type, min-max, quantile Q1, quantile Q2, quantile Q3</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">tips</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>facture</th>
+      <th>pourboire</th>
+      <th>size</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>count</th>
+      <td>244.000000</td>
+      <td>244.000000</td>
+      <td>244.000000</td>
+    </tr>
+    <tr>
+      <th>mean</th>
+      <td>19.785943</td>
+      <td>2.998279</td>
+      <td>2.569672</td>
+    </tr>
+    <tr>
+      <th>std</th>
+      <td>8.902412</td>
+      <td>1.383638</td>
+      <td>0.951100</td>
+    </tr>
+    <tr>
+      <th>min</th>
+      <td>3.070000</td>
+      <td>1.000000</td>
+      <td>1.000000</td>
+    </tr>
+    <tr>
+      <th>25%</th>
+      <td>13.347500</td>
+      <td>2.000000</td>
+      <td>2.000000</td>
+    </tr>
+    <tr>
+      <th>50%</th>
+      <td>17.795000</td>
+      <td>2.900000</td>
+      <td>2.000000</td>
+    </tr>
+    <tr>
+      <th>75%</th>
+      <td>24.127500</td>
+      <td>3.562500</td>
+      <td>3.000000</td>
+    </tr>
+    <tr>
+      <th>max</th>
+      <td>50.810000</td>
+      <td>10.000000</td>
+      <td>6.000000</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<ul class="simple">
+<li><p>Arrandire les valeurs (2 chiffres après la virgule)</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">tips</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>facture</th>
+      <th>pourboire</th>
+      <th>size</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>count</th>
+      <td>244.00</td>
+      <td>244.00</td>
+      <td>244.00</td>
+    </tr>
+    <tr>
+      <th>mean</th>
+      <td>19.79</td>
+      <td>3.00</td>
+      <td>2.57</td>
+    </tr>
+    <tr>
+      <th>std</th>
+      <td>8.90</td>
+      <td>1.38</td>
+      <td>0.95</td>
+    </tr>
+    <tr>
+      <th>min</th>
+      <td>3.07</td>
+      <td>1.00</td>
+      <td>1.00</td>
+    </tr>
+    <tr>
+      <th>25%</th>
+      <td>13.35</td>
+      <td>2.00</td>
+      <td>2.00</td>
+    </tr>
+    <tr>
+      <th>50%</th>
+      <td>17.80</td>
+      <td>2.90</td>
+      <td>2.00</td>
+    </tr>
+    <tr>
+      <th>75%</th>
+      <td>24.13</td>
+      <td>3.56</td>
+      <td>3.00</td>
+    </tr>
+    <tr>
+      <th>max</th>
+      <td>50.81</td>
+      <td>10.00</td>
+      <td>6.00</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<ul class="simple">
+<li><p>Décrire juste une seule variable quantitative (ex: <code>”facture”</code>).</p></p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">tips</span><span class="o">.</span><span class="n">facture</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>count    244.000000
+mean      19.785943
+std        8.902412
+min        3.070000
+25%       13.347500
+50%       17.795000
+75%       24.127500
+max       50.810000
+Name: facture, dtype: float64
+</pre></div>
+</div>
+</div>
+</div>
+<ul class="simple">
+<li><p>Calculer sa moyenne, écart-type, variance, médiane, min, max, quantiles</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># #moyenne</span>
+<span class="c1"># tips.facture.mean()</span>
+
+<span class="c1"># #écart-type</span>
+<span class="c1"># tips.facture.std()</span>
+
+<span class="c1"># #variance</span>
+<span class="c1"># tips.facture.var()</span>
+
+<span class="c1"># #médiane</span>
+<span class="c1"># tips.facture.median()</span>
+
+<span class="c1"># #min</span>
+<span class="c1"># tips.facture.min()</span>
+
+<span class="c1"># #max</span>
+<span class="c1"># tips.facture.max()</span>
+
+<span class="c1">#quantiles</span>
+<span class="n">tips</span><span class="o">.</span><span class="n">facture</span><span class="o">.</span><span class="n">quantile</span><span class="p">([</span><span class="o">.</span><span class="mi">01</span><span class="p">,</span> <span class="o">.</span><span class="mi">1</span><span class="p">,</span> <span class="o">.</span><span class="mi">9</span><span class="p">,</span> <span class="o">.</span><span class="mi">99</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.01     7.250
+0.10    10.340
+0.90    32.235
+0.99    48.227
+Name: facture, dtype: float64
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="histogramme">
+<h1>Histogramme<a class="headerlink" href="#histogramme" title="Permalink to this headline">¶</a></h1>
+<p>Pour représenter graphiquement les variables d’un jeu de données, <code>pandas</code> met à disposition (via le module <code>matplotlib</code> utilisé par <code>pandas</code>) des fonctions graphiques.</p>
+<ul class="simple">
+<li><p>Réaliser un <strong>histogramme</strong>, en utilisant une version avec la fonction <code>hist()</code>.</p></li>
+<li><p>Une deuxième version avec la fonction <code>plot()</code>.</p></li>
+<li><p>Réaliser les deux fonctions précedentes, mais seulement pour une seule variable du jeu de données</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">tips</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">hist</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.axes._subplots.AxesSubplot at 0x227acec5d48&gt;
+</pre></div>
+</div>
+<img alt="_images/annalyse_des_donnees-stat_18_1.png" src="_images/annalyse_des_donnees-stat_18_1.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">tips</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">kind</span> <span class="o">=</span> <span class="s2">&quot;hist&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.axes._subplots.AxesSubplot at 0x227acf66e08&gt;
+</pre></div>
+</div>
+<img alt="_images/annalyse_des_donnees-stat_19_1.png" src="_images/annalyse_des_donnees-stat_19_1.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">tips</span><span class="o">.</span><span class="n">facture</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">kind</span> <span class="o">=</span> <span class="s2">&quot;hist&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.axes._subplots.AxesSubplot at 0x227ad043448&gt;
+</pre></div>
+</div>
+<img alt="_images/annalyse_des_donnees-stat_20_1.png" src="_images/annalyse_des_donnees-stat_20_1.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">tips</span><span class="o">.</span><span class="n">facture</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">kind</span> <span class="o">=</span> <span class="s2">&quot;hist&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.axes._subplots.AxesSubplot at 0x227ad0c1348&gt;
+</pre></div>
+</div>
+<img alt="_images/annalyse_des_donnees-stat_21_1.png" src="_images/annalyse_des_donnees-stat_21_1.png" />
+</div>
+</div>
+</div>
+<div class="section" id="boites-a-moustaches">
+<h1>Boîtes à moustaches<a class="headerlink" href="#boites-a-moustaches" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li><p>Afficher les <strong>boîtes à moustaches</strong> du jeu de données.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">tips</span><span class="o">.</span><span class="n">boxplot</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.axes._subplots.AxesSubplot at 0x227ad0ff288&gt;
+</pre></div>
+</div>
+<img alt="_images/annalyse_des_donnees-stat_23_1.png" src="_images/annalyse_des_donnees-stat_23_1.png" />
+</div>
+</div>
+<ul class="simple">
+<li><p>Afficher <strong>la boîte à moustache</strong> d’une variable spécifique.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">tips</span><span class="o">.</span><span class="n">boxplot</span><span class="p">(</span><span class="n">column</span> <span class="o">=</span> <span class="s2">&quot;facture&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.axes._subplots.AxesSubplot at 0x227ad1ba2c8&gt;
+</pre></div>
+</div>
+<img alt="_images/annalyse_des_donnees-stat_25_1.png" src="_images/annalyse_des_donnees-stat_25_1.png" />
+</div>
+</div>
+<ul class="simple">
+<li><p>Afficher <strong>la boîte à moustache</strong> d’une variable spécifique en enlevant la gride.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">tips</span><span class="o">.</span><span class="n">boxplot</span><span class="p">(</span><span class="n">column</span> <span class="o">=</span> <span class="s2">&quot;facture&quot;</span><span class="p">,</span> <span class="n">grid</span> <span class="o">=</span> <span class="kc">False</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.axes._subplots.AxesSubplot at 0x227ad22bac8&gt;
+</pre></div>
+</div>
+<img alt="_images/annalyse_des_donnees-stat_27_1.png" src="_images/annalyse_des_donnees-stat_27_1.png" />
+</div>
+</div>
+</div>
+<div class="section" id="qualitative">
+<h1>Qualitative<a class="headerlink" href="#qualitative" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li><p>Afficher la table d’occurences (ou des effectifs) des variables qualitatives, ainsi que la table des proportions des modalités.</p></p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">tips</span><span class="o">.</span><span class="n">sex</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>count      244
+unique       2
+top       Male
+freq       157
+Name: sex, dtype: object
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">tips</span><span class="o">.</span><span class="n">sex</span><span class="o">.</span><span class="n">unique</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([&#39;Female&#39;, &#39;Male&#39;], dtype=object)
+</pre></div>
+</div>
+</div>
+</div>
+<ul class="simple">
+<li><p>Calculer le nombre d’occurence par modalité de la variable sex par deux versions (value_counts() et crosstab() )</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">tips</span><span class="o">.</span><span class="n">sex</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>
+
+<span class="n">pandas</span><span class="o">.</span><span class="n">crosstab</span><span class="p">(</span><span class="n">tips</span><span class="o">.</span><span class="n">sex</span><span class="p">,</span> <span class="s2">&quot;freq&quot;</span><span class="p">)</span> <span class="c1"># Calculez une simple tabulation croisée de deux (ou plus) variables. </span>
+                                   <span class="c1"># Par défaut, calcule une table de fréquences des variables sauf si un </span>
+                                   <span class="c1"># tableau de valeurs et une fonction d&#39;agrégation sont passés.</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>col_0</th>
+      <th>freq</th>
+    </tr>
+    <tr>
+      <th>sex</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Female</th>
+      <td>87</td>
+    </tr>
+    <tr>
+      <th>Male</th>
+      <td>157</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<ul class="simple">
+<li><p>Calculer le nombre d’occurence normalisé par modalité de la variable sex par deux versions</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pandas</span><span class="o">.</span><span class="n">crosstab</span><span class="p">(</span><span class="n">tips</span><span class="o">.</span><span class="n">sex</span><span class="p">,</span> <span class="s2">&quot;freq&quot;</span><span class="p">,</span> <span class="n">normalize</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>col_0</th>
+      <th>freq</th>
+    </tr>
+    <tr>
+      <th>sex</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Female</th>
+      <td>0.356557</td>
+    </tr>
+    <tr>
+      <th>Male</th>
+      <td>0.643443</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="section" id="diagramme-en-barres">
+<h2>Diagramme en barres<a class="headerlink" href="#diagramme-en-barres" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Réaliser un <strong>diagramme en barres</strong>, en utilisant le type <code>”bar”</code> pour <code>plot()</code>.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">t</span> <span class="o">=</span> <span class="n">pandas</span><span class="o">.</span><span class="n">crosstab</span><span class="p">(</span><span class="n">tips</span><span class="o">.</span><span class="n">sex</span><span class="p">,</span> <span class="s2">&quot;freq&quot;</span><span class="p">)</span>
+<span class="n">t</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">bar</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.axes._subplots.AxesSubplot at 0x227ad2a0288&gt;
+</pre></div>
+</div>
+<img alt="_images/annalyse_des_donnees-stat_36_1.png" src="_images/annalyse_des_donnees-stat_36_1.png" />
+</div>
+</div>
+</div>
+<div class="section" id="diagramme-circulaire">
+<h2>Diagramme circulaire<a class="headerlink" href="#diagramme-circulaire" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Réaliser un <strong>diagramme circulaire</strong>, pour le tableau des effectifs de la variable sex produit par <code>crosstab()</code>.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">t</span> <span class="o">=</span> <span class="n">pandas</span><span class="o">.</span><span class="n">crosstab</span><span class="p">(</span><span class="n">tips</span><span class="o">.</span><span class="n">sex</span><span class="p">,</span> <span class="s2">&quot;freq&quot;</span><span class="p">)</span>
+<span class="n">t</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">pie</span><span class="p">(</span><span class="n">subplots</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">figsize</span> <span class="o">=</span> <span class="p">(</span><span class="mi">8</span><span class="p">,</span><span class="mi">8</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([&lt;matplotlib.axes._subplots.AxesSubplot object at 0x0000021FCFFC17C8&gt;],
+      dtype=object)
+</pre></div>
+</div>
+<img alt="_images/annalyse_des_donnees-stat_38_1.png" src="_images/annalyse_des_donnees-stat_38_1.png" />
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="statistiques-descriptives-bivariees">
+<h1>Statistiques descriptives bivariées<a class="headerlink" href="#statistiques-descriptives-bivariees" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="quantitative">
+<h2>Quantitative<a class="headerlink" href="#quantitative" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Calculer la correlation entre les différentes variables du jeu de données.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">tips</span><span class="o">.</span><span class="n">corr</span><span class="p">()</span>
+<span class="c1"># tips.cov()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>facture</th>
+      <th>pourboire</th>
+      <th>size</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>facture</th>
+      <td>1.000000</td>
+      <td>0.675734</td>
+      <td>0.598315</td>
+    </tr>
+    <tr>
+      <th>pourboire</th>
+      <td>0.675734</td>
+      <td>1.000000</td>
+      <td>0.489299</td>
+    </tr>
+    <tr>
+      <th>size</th>
+      <td>0.598315</td>
+      <td>0.489299</td>
+      <td>1.000000</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<ul class="simple">
+<li><p>Calculer la correlation entre deux variables du jeu de données.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">tips</span><span class="o">.</span><span class="n">facture</span><span class="o">.</span><span class="n">corr</span><span class="p">(</span><span class="n">tips</span><span class="o">.</span><span class="n">pourboire</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.6757341092113641
+</pre></div>
+</div>
+</div>
+</div>
+<ul class="simple">
+<li><p>Calculer la covarriance entre deux variables du jeu de données.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">tips</span><span class="o">.</span><span class="n">facture</span><span class="o">.</span><span class="n">cov</span><span class="p">(</span><span class="n">tips</span><span class="o">.</span><span class="n">pourboire</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>8.323501629224854
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="nuage-de-points">
+<h2>Nuage de points<a class="headerlink" href="#nuage-de-points" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Afficher le nuage des points des deux variables X=facture et Y=pourboire</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">tips</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="s2">&quot;facture&quot;</span><span class="p">,</span> <span class="s2">&quot;pourboire&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.axes._subplots.AxesSubplot at 0x227ad35d9c8&gt;
+</pre></div>
+</div>
+<img alt="_images/annalyse_des_donnees-stat_46_1.png" src="_images/annalyse_des_donnees-stat_46_1.png" />
+</div>
+</div>
+</div>
+<div class="section" id="id1">
+<h2>Qualitative<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Afficher la table croisée du nombre des fumeurs et non fumeurs selon leur sex dans le jeux de données</span>
+
+<span class="n">pandas</span><span class="o">.</span><span class="n">crosstab</span><span class="p">(</span><span class="n">tips</span><span class="o">.</span><span class="n">sex</span><span class="p">,</span> <span class="n">tips</span><span class="o">.</span><span class="n">Fumeur</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>Fumeur</th>
+      <th>No</th>
+      <th>Yes</th>
+    </tr>
+    <tr>
+      <th>sex</th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Female</th>
+      <td>54</td>
+      <td>33</td>
+    </tr>
+    <tr>
+      <th>Male</th>
+      <td>97</td>
+      <td>60</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Afficher la table croisée du nombre des fumeurs et non fumeurs selon leur sex avec le nombre total de chaque ligne/colonne dans le jeux de données</span>
+<span class="n">pandas</span><span class="o">.</span><span class="n">crosstab</span><span class="p">(</span><span class="n">tips</span><span class="o">.</span><span class="n">sex</span><span class="p">,</span> <span class="n">tips</span><span class="o">.</span><span class="n">Fumeur</span><span class="p">,</span> <span class="n">margins</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>Fumeur</th>
+      <th>No</th>
+      <th>Yes</th>
+      <th>All</th>
+    </tr>
+    <tr>
+      <th>sex</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Female</th>
+      <td>54</td>
+      <td>33</td>
+      <td>87</td>
+    </tr>
+    <tr>
+      <th>Male</th>
+      <td>97</td>
+      <td>60</td>
+      <td>157</td>
+    </tr>
+    <tr>
+      <th>All</th>
+      <td>151</td>
+      <td>93</td>
+      <td>244</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Afficher la table croisée normalisée du nombre des fumeurs et non fumeurs selon leur sex dans le jeux de données</span>
+
+<span class="n">pandas</span><span class="o">.</span><span class="n">crosstab</span><span class="p">(</span><span class="n">tips</span><span class="o">.</span><span class="n">sex</span><span class="p">,</span> <span class="n">tips</span><span class="o">.</span><span class="n">Fumeur</span><span class="p">,</span> <span class="n">normalize</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>Fumeur</th>
+      <th>No</th>
+      <th>Yes</th>
+    </tr>
+    <tr>
+      <th>sex</th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Female</th>
+      <td>0.221311</td>
+      <td>0.135246</td>
+    </tr>
+    <tr>
+      <th>Male</th>
+      <td>0.397541</td>
+      <td>0.245902</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Afficher la moyenne des factures, pourboires, size groupée par sex</span>
+
+<span class="n">tips</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s2">&quot;sex&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>facture</th>
+      <th>pourboire</th>
+      <th>size</th>
+    </tr>
+    <tr>
+      <th>sex</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Female</th>
+      <td>18.056897</td>
+      <td>2.833448</td>
+      <td>2.459770</td>
+    </tr>
+    <tr>
+      <th>Male</th>
+      <td>20.744076</td>
+      <td>3.089618</td>
+      <td>2.630573</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Afficher la moyenne, l&#39;écart-type, médiane, min et max de la variable facture groupés par sex</span>
+
+<span class="n">tips</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s2">&quot;sex&quot;</span><span class="p">)[</span><span class="s2">&quot;facture&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">agg</span><span class="p">([</span><span class="n">numpy</span><span class="o">.</span><span class="n">mean</span><span class="p">,</span> <span class="n">numpy</span><span class="o">.</span><span class="n">std</span><span class="p">,</span> <span class="n">numpy</span><span class="o">.</span><span class="n">median</span><span class="p">,</span> <span class="n">numpy</span><span class="o">.</span><span class="n">min</span><span class="p">,</span> <span class="n">numpy</span><span class="o">.</span><span class="n">max</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>mean</th>
+      <th>std</th>
+      <th>median</th>
+      <th>amin</th>
+      <th>amax</th>
+    </tr>
+    <tr>
+      <th>sex</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Female</th>
+      <td>18.056897</td>
+      <td>8.009209</td>
+      <td>16.40</td>
+      <td>3.07</td>
+      <td>44.30</td>
+    </tr>
+    <tr>
+      <th>Male</th>
+      <td>20.744076</td>
+      <td>9.246469</td>
+      <td>18.35</td>
+      <td>7.25</td>
+      <td>50.81</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Afficher les deux histogrammes de la variable facture selon le sex</span>
+
+<span class="n">tips</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">column</span> <span class="o">=</span> <span class="s2">&quot;facture&quot;</span><span class="p">,</span> <span class="n">by</span> <span class="o">=</span> <span class="s2">&quot;sex&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([&lt;matplotlib.axes._subplots.AxesSubplot object at 0x00000227AD3CF4C8&gt;,
+       &lt;matplotlib.axes._subplots.AxesSubplot object at 0x00000227AD3CF648&gt;],
+      dtype=object)
+</pre></div>
+</div>
+<img alt="_images/annalyse_des_donnees-stat_53_1.png" src="_images/annalyse_des_donnees-stat_53_1.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Afficher les boites à moustache de toutes les variables (facture, pourboire, size) selon le sex</span>
+
+<span class="n">tips</span><span class="o">.</span><span class="n">boxplot</span><span class="p">(</span><span class="n">by</span> <span class="o">=</span> <span class="s2">&quot;sex&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[&lt;matplotlib.axes._subplots.AxesSubplot object at 0x00000227AD4A3DC8&gt;,
+        &lt;matplotlib.axes._subplots.AxesSubplot object at 0x00000227AD4C7388&gt;],
+       [&lt;matplotlib.axes._subplots.AxesSubplot object at 0x00000227AD51D288&gt;,
+        &lt;matplotlib.axes._subplots.AxesSubplot object at 0x00000227AD553548&gt;]],
+      dtype=object)
+</pre></div>
+</div>
+<img alt="_images/annalyse_des_donnees-stat_54_1.png" src="_images/annalyse_des_donnees-stat_54_1.png" />
+</div>
+</div>
+</div>
+<div class="section" id="id2">
+<h2>Diagramme en barres<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Afficher le diagramme en barres du nombre des fumeurs et non fumeurs selon leur sex</span>
+
+<span class="n">t</span> <span class="o">=</span> <span class="n">pandas</span><span class="o">.</span><span class="n">crosstab</span><span class="p">(</span><span class="n">tips</span><span class="o">.</span><span class="n">sex</span><span class="p">,</span> <span class="n">tips</span><span class="o">.</span><span class="n">Fumeur</span><span class="p">)</span>
+<span class="n">t</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">bar</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.axes._subplots.AxesSubplot at 0x227ad5aa648&gt;
+</pre></div>
+</div>
+<img alt="_images/annalyse_des_donnees-stat_56_1.png" src="_images/annalyse_des_donnees-stat_56_1.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Afficher le diagramme en barres du nombre des fumeurs et non fumeurs selon leur sex normalisé</span>
+
+<span class="n">t</span> <span class="o">=</span> <span class="n">pandas</span><span class="o">.</span><span class="n">crosstab</span><span class="p">(</span><span class="n">tips</span><span class="o">.</span><span class="n">sex</span><span class="p">,</span> <span class="n">tips</span><span class="o">.</span><span class="n">Fumeur</span><span class="p">,</span> <span class="n">normalize</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">t</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">bar</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.axes._subplots.AxesSubplot at 0x227ad6d46c8&gt;
+</pre></div>
+</div>
+<img alt="_images/annalyse_des_donnees-stat_57_1.png" src="_images/annalyse_des_donnees-stat_57_1.png" />
+</div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        </div>
+    </div>
+    
+    
+    <div class='prev-next-bottom'>
+        
+    <a class='left-prev' id="prev-link" href="index.html" title="previous page">Introduction</a>
+    <a class='right-next' id="next-link" href="heritage_class_python.html" title="next page">Héritage</a>
+
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By The Jupyter Book community<br/>
+        
+            &copy; Copyright 2020.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    
+  <script src="_static/js/index.3da636dd464baa7582d2.js"></script>
+
+
+    
+  </body>
+</html>
