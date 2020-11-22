@@ -1,0 +1,725 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MySql &#8212; Mon Cahier</title>
+    
+  <link rel="stylesheet" href="_static/css/index.73d71520a4ca3b99cfee5594769eaaae.css">
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+  <link rel="stylesheet"
+    href="_static/vendor/open-sans_all/1.44.1/index.css">
+  <link rel="stylesheet"
+    href="_static/vendor/lato_latin-ext/1.44.1/index.css">
+
+    
+    <link rel="stylesheet" href="_static/sphinx-book-theme.40e2e510f6b7d1648584402491bb10fe.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="_static/js/index.3da636dd464baa7582d2.js">
+
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/language_data.js"></script>
+    <script src="_static/togglebutton.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/sphinx-book-theme.d31b09fe5c1d09cb49b26a786de4a05d.js"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Creation de vecteurs et des matrices" href="numpy.html" />
+    <link rel="prev" title="Héritage" href="heritage_class_python.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="index.html">
+  
+  <img src="_static/logo.png" class="logo" alt="logo">
+  
+  
+  <h1 class="site-logo" id="site-title">Mon Cahier</h1>
+  
+</a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="index.html">
+   Introduction
+  </a>
+ </li>
+</ul>
+<ul class="current nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="annalyse_des_donnees-stat.html">
+   Analyse de Données Massives
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="annalyse_des_donnees-stat.html#donnees">
+   Données
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="annalyse_des_donnees-stat.html#statistiques-descriptives-univaries">
+   Statistiques descriptives univariés
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="annalyse_des_donnees-stat.html#histogramme">
+   Histogramme
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="annalyse_des_donnees-stat.html#boites-a-moustaches">
+   Boîtes à moustaches
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="annalyse_des_donnees-stat.html#qualitative">
+   Qualitative
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="annalyse_des_donnees-stat.html#statistiques-descriptives-bivariees">
+   Statistiques descriptives bivariées
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="heritage_class_python.html">
+   Héritage
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   MySql
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="numpy.html">
+   Creation de vecteurs et des matrices
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="numpy.html#extraction-des-valeurs">
+   Extraction des valeurs
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="numpy.html#calcul-sur-les-vecteurs-et-les-matrices">
+   Calcul sur les vecteurs et les matrices:
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="pandas.html">
+   Pandas
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="pandas.html#creation-de-donnees">
+   Création de données
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="pandas.html#lecture-des-donnees">
+   Lecture des données
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="pandas.html#exploration-des-data-frames">
+   Exploration des Data Frames
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="pandas.html#les-attributs-du-data-frame">
+   Les attributs du Data Frame
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="pandas.html#les-methodes-du-data-frame">
+   Les méthodes du Data Frame
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="pandas.html#selection-d-une-colonne-dans-un-data-frame">
+   Sélection d’une colonne dans un Data Frame
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="pandas.html#la-methode-groupby">
+   La méthode groupby
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="pandas.html#filtrage">
+   Filtrage
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="pandas.html#slicing">
+   Slicing
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="pandas.html#selection-des-lignes">
+   Sélection des lignes
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="pandas.html#loc">
+   Loc
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="pandas.html#tri">
+   Tri
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="pandas.html#valeurs-manquantes">
+   Valeurs manquantes
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="interface_pyqt.html">
+   Interfaces graphiques avec PyQt
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="tkinter.html">
+   Interfaces graphiques avec Tkinter
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="poo.html">
+   Programmation Orientée Objet
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="proprietes_en_poo.html">
+   Propriétés des objets en POO
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="python_module_os.html">
+   Python - Le module OS
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="python_lecture_fichier.html">
+   Python Traitement de fichiers
+  </a>
+ </li>
+</ul>
+
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="row topbar fixed-top container-xl">
+    <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show">
+    </div>
+    <div class="col pl-2 topbar-main">
+        
+        <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+            data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+            aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+            title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+            <i class="fas fa-bars"></i>
+            <i class="fas fa-arrow-left"></i>
+            <i class="fas fa-arrow-up"></i>
+        </button>
+        
+        
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="_sources/mysql.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+        <!-- Source interaction buttons -->
+
+
+        <!-- Full screen (wrap in <a> to have style consistency -->
+        <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+                title="Fullscreen mode"><i
+                    class="fas fa-expand"></i></button></a>
+
+        <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/mysql.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+    </div>
+
+    <!-- Table of contents -->
+    <div class="d-none d-md-block col-md-2 bd-toc show">
+        
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i> Contents
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#utiliser-une-base-de-donnee-mysql">
+   Utiliser une base de donnée MySQL
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#renommer-une-tables">
+   Renommer une tables
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#ajouter-des-valeur-a-une-table">
+   Ajouter des valeur à une table
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#mysql-table-arret-ligne-dans-brizhibus-pour-les-lignes-r-v-b">
+     MySql : table arret_ligne dans Brizhibus pour les lignes R, V, B
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#mysql-table-arret-ligne-dans-brizhibus-pour-la-ligne-n">
+     MySql : table arret_ligne dans Brizhibus pour la ligne N
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#requete-pour-retourner-la-liste-des-lignes">
+     Requête pour retourner la liste des lignes :
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#requete-pour-trouver-les-arrets-d-une-ligne">
+     Requête pour trouver les arrêts d’une ligne :
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#les-arrets-desservit-par-la-ligne-rouge-join">
+     Les arrêts desservit par la ligne rouge : Join
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#ajouter-une-colonne-dans-une-table">
+   Ajouter une colonne dans une table
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#la-syntaxe-pour-ajouter-une-colonne-dans-une-table-mysql-est-la-suivante">
+     La syntaxe pour ajouter une colonne dans une table MySQL est la suivante:
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#exemple-1-ajouter-une-seule-colonne">
+     Exemple 1: Ajouter une seule colonne
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#exemple-2-ajouter-plusieurs-colonnes">
+     Exemple 2: Ajouter plusieurs colonnes
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#modifier-une-colonne-dans-une-table">
+   Modifier une colonne dans une table
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#la-syntaxe-pour-modifier-une-colonne-dans-une-table-mysql-est-la-suivante">
+     La syntaxe pour modifier une colonne dans une table MySQL est la suivante:
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#exemple">
+     Exemple:
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#renommer-une-colonne-dans-une-table">
+   Renommer une colonne dans une table
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#la-syntaxe-pour-renommer-une-colonne-dans-une-table-mysql-est-la-suivante">
+     La syntaxe pour renommer une colonne dans une table MySQL est la suivante:
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id1">
+     Exemple:
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#creer-la-base-et-inserer-des-donnees">
+     Créer la base et insérer des données
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#recuperer-des-donnees">
+     Récupérer des données
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+        </nav>
+        
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="mysql">
+<h1>MySql<a class="headerlink" href="#mysql" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="utiliser-une-base-de-donnee-mysql">
+<h2>Utiliser une base de donnée MySQL<a class="headerlink" href="#utiliser-une-base-de-donnee-mysql" title="Permalink to this headline">¶</a></h2>
+<p>Pour cette partie, on a installé le paquet python3-mysql.connector.</p>
+<p>A partir de la table arrets disponible dans la base de données Breizhibus, afficher tous les arrêts dans l’ordre alphabétique de leur nom :
+SELECT *
+FROM arrets
+ORDER BY nom</p>
+</div>
+<div class="section" id="renommer-une-tables">
+<h2>Renommer une tables<a class="headerlink" href="#renommer-une-tables" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span> RENAME TABLE old_table TO new_table;
+ ou
+ RENAME TABLE old_table1 TO new_table1,
+             old_table2 TO new_table2,
+             old_table3 TO new_table3;
+</pre></div>
+</div>
+</div>
+<div class="section" id="ajouter-des-valeur-a-une-table">
+<h2>Ajouter des valeur à une table<a class="headerlink" href="#ajouter-des-valeur-a-une-table" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>INSERT INTO tableName (colonne1, colonne2, ...) VALUES (valeur1, valeur2, ...);
+</pre></div>
+</div>
+<div class="section" id="mysql-table-arret-ligne-dans-brizhibus-pour-les-lignes-r-v-b">
+<h3>MySql : table arret_ligne dans Brizhibus pour les lignes R, V, B<a class="headerlink" href="#mysql-table-arret-ligne-dans-brizhibus-pour-les-lignes-r-v-b" title="Permalink to this headline">¶</a></h3>
+<p>INSERT INTO <code class="docutils literal notranslate"><span class="pre">arrets_lignes</span></code> (<code class="docutils literal notranslate"><span class="pre">id_ligne</span></code>, <code class="docutils literal notranslate"><span class="pre">id_arret</span></code>) VALUES (‘1’, ‘1’), (‘1’, ‘2’), (‘1’, ‘3’), (‘2’, ‘2’), (‘2’, ‘4’), (‘2’, ‘6’), (‘3’, ‘4’), (‘3’, ‘5’), (‘3’, ‘6’), (‘3’, ‘1’);</p>
+</div>
+<div class="section" id="mysql-table-arret-ligne-dans-brizhibus-pour-la-ligne-n">
+<h3>MySql : table arret_ligne dans Brizhibus pour la ligne N<a class="headerlink" href="#mysql-table-arret-ligne-dans-brizhibus-pour-la-ligne-n" title="Permalink to this headline">¶</a></h3>
+<p>INSERT INTO <code class="docutils literal notranslate"><span class="pre">arrets_lignes</span></code> (<code class="docutils literal notranslate"><span class="pre">id_ligne</span></code>, <code class="docutils literal notranslate"><span class="pre">id_arret</span></code>) VALUES (‘6’, ‘1’), (‘6’, ‘3’), (‘6’, ‘5’);</p>
+</div>
+<div class="section" id="requete-pour-retourner-la-liste-des-lignes">
+<h3>Requête pour retourner la liste des lignes :<a class="headerlink" href="#requete-pour-retourner-la-liste-des-lignes" title="Permalink to this headline">¶</a></h3>
+<p>SELECT * FROM lignes;</p>
+</div>
+<div class="section" id="requete-pour-trouver-les-arrets-d-une-ligne">
+<h3>Requête pour trouver les arrêts d’une ligne :<a class="headerlink" href="#requete-pour-trouver-les-arrets-d-une-ligne" title="Permalink to this headline">¶</a></h3>
+<p>SELECT * FROM arrets
+JOIN arrets_lignes ON arrets.id_arret = arrets_lignes.id_arret
+WHERE id_lignes = 1;
+Où 1 peut-être n’importe quelle id de ligne.</p>
+<p><img alt="join_on_where Logo" src=".%5Cimages%5Cjoin_on_where.png" /></p>
+</div>
+<div class="section" id="les-arrets-desservit-par-la-ligne-rouge-join">
+<h3>Les arrêts desservit par la ligne rouge : Join<a class="headerlink" href="#les-arrets-desservit-par-la-ligne-rouge-join" title="Permalink to this headline">¶</a></h3>
+<p>SELECT * FROM <code class="docutils literal notranslate"><span class="pre">arrets</span></code> JOIN lignes ON lignes.id_ligne=arrets.id_arret WHERE id_ligne=1</p>
+</div>
+</div>
+<div class="section" id="ajouter-une-colonne-dans-une-table">
+<h2>Ajouter une colonne dans une table<a class="headerlink" href="#ajouter-une-colonne-dans-une-table" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="la-syntaxe-pour-ajouter-une-colonne-dans-une-table-mysql-est-la-suivante">
+<h3>La syntaxe pour ajouter une colonne dans une table MySQL est la suivante:<a class="headerlink" href="#la-syntaxe-pour-ajouter-une-colonne-dans-une-table-mysql-est-la-suivante" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>    ALTER TABLE tableName
+        ADD newColumn type
+          [ FIRST | AFTER columnName ]
+</pre></div>
+</div>
+</div>
+<div class="section" id="exemple-1-ajouter-une-seule-colonne">
+<h3>Exemple 1: Ajouter une seule colonne<a class="headerlink" href="#exemple-1-ajouter-une-seule-colonne" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>    ALTER TABLE users
+      ADD age int NOT NULL
+        AFTER name;
+</pre></div>
+</div>
+</div>
+<div class="section" id="exemple-2-ajouter-plusieurs-colonnes">
+<h3>Exemple 2: Ajouter plusieurs colonnes<a class="headerlink" href="#exemple-2-ajouter-plusieurs-colonnes" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>    ALTER TABLE users
+      ADD age int NOT NULL
+        AFTER name,
+      ADD address varchar(50) NOT NULL
+        AFTER age;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="modifier-une-colonne-dans-une-table">
+<h2>Modifier une colonne dans une table<a class="headerlink" href="#modifier-une-colonne-dans-une-table" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="la-syntaxe-pour-modifier-une-colonne-dans-une-table-mysql-est-la-suivante">
+<h3>La syntaxe pour modifier une colonne dans une table MySQL est la suivante:<a class="headerlink" href="#la-syntaxe-pour-modifier-une-colonne-dans-une-table-mysql-est-la-suivante" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>    ALTER TABLE tableName
+        MODIFY columnName type
+          [ FIRST | AFTER columnName ];
+</pre></div>
+</div>
+</div>
+<div class="section" id="exemple">
+<h3>Exemple:<a class="headerlink" href="#exemple" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>    ALTER TABLE users
+      MODIFY address varchar(100) NULL;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="renommer-une-colonne-dans-une-table">
+<h2>Renommer une colonne dans une table<a class="headerlink" href="#renommer-une-colonne-dans-une-table" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="la-syntaxe-pour-renommer-une-colonne-dans-une-table-mysql-est-la-suivante">
+<h3>La syntaxe pour renommer une colonne dans une table MySQL est la suivante:<a class="headerlink" href="#la-syntaxe-pour-renommer-une-colonne-dans-une-table-mysql-est-la-suivante" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>    ALTER TABLE tableName
+        CHANGE COLUMN oldName newName 
+          type
+          [ FIRST | AFTER columnName ]
+</pre></div>
+</div>
+</div>
+<div class="section" id="id1">
+<h3>Exemple:<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>    ALTER TABLE users
+      CHANGE COLUMN name lastname
+        varchar(50) NOT NULL;
+</pre></div>
+</div>
+</div>
+<div class="section" id="creer-la-base-et-inserer-des-donnees">
+<h3>Créer la base et insérer des données<a class="headerlink" href="#creer-la-base-et-inserer-des-donnees" title="Permalink to this headline">¶</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Nous allons utiliser le module mysql.connector pour nous connecter au serveur MariaDB ou MySQL et créer notre base de données permettant de stocker un catalogue de produits.</span>
+<span class="kn">import</span> <span class="nn">mysql.connector</span>
+
+<span class="n">baseDeDonnees</span> <span class="o">=</span> <span class="n">mysql</span><span class="o">.</span><span class="n">connector</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="n">host</span><span class="o">=</span><span class="s2">&quot;localhost&quot;</span><span class="p">,</span><span class="n">user</span><span class="o">=</span><span class="s2">&quot;catalogue&quot;</span><span class="p">,</span><span class="n">password</span><span class="o">=</span><span class="s2">&quot;JieTh8Th&quot;</span><span class="p">,</span> <span class="n">database</span><span class="o">=</span><span class="s2">&quot;Catalogue&quot;</span><span class="p">)</span>
+<span class="n">cursor</span> <span class="o">=</span> <span class="n">baseDeDonnees</span><span class="o">.</span><span class="n">cursor</span><span class="p">()</span>
+<span class="n">cursor</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="s2">&quot;CREATE TABLE Produits (reference CHAR(5) NOT NULL PRIMARY KEY, nom TINYTEXT NOT NULL, prix FLOAT NOT NULL)ENGINE=InnoDB DEFAULT CHARSET=utf8;&quot;</span><span class="p">)</span>
+<span class="n">baseDeDonnees</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Nous</span> <span class="n">allons</span> <span class="n">à</span> <span class="n">présent</span> <span class="n">insérer</span> <span class="n">des</span> <span class="n">données</span> <span class="n">dans</span> <span class="n">cette</span> <span class="n">table</span> <span class="p">:</span>
+    
+<span class="kn">import</span> <span class="nn">mysql.connector</span> 
+<span class="n">baseDeDonnees</span> <span class="o">=</span> <span class="n">mysql</span><span class="o">.</span><span class="n">connector</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="n">host</span><span class="o">=</span><span class="s2">&quot;localhost&quot;</span><span class="p">,</span><span class="n">user</span><span class="o">=</span><span class="s2">&quot;catalogue&quot;</span><span class="p">,</span><span class="n">password</span><span class="o">=</span><span class="s2">&quot;JieTh8Th&quot;</span><span class="p">,</span> <span class="n">database</span><span class="o">=</span><span class="s2">&quot;Catalogue&quot;</span><span class="p">)</span>
+<span class="n">curseur</span> <span class="o">=</span> <span class="n">baseDeDonnees</span><span class="o">.</span><span class="n">cursor</span><span class="p">()</span>
+<span class="n">curseur</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="s2">&quot;INSERT INTO Produits (reference, nom, prix) VALUES (</span><span class="si">%s</span><span class="s2">, </span><span class="si">%s</span><span class="s2">, </span><span class="si">%s</span><span class="s2">)&quot;</span><span class="p">,</span> <span class="p">(</span><span class="s2">&quot;ARB42&quot;</span><span class="p">,</span> <span class="s2">&quot;Canapé deux places noir&quot;</span><span class="p">,</span> <span class="mf">199.99</span><span class="p">))</span>
+<span class="n">baseDeDonnees</span><span class="o">.</span><span class="n">commit</span><span class="p">()</span>
+<span class="n">baseDeDonnees</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Il</span> <span class="n">est</span> <span class="n">également</span> <span class="n">possible</span> <span class="n">d</span><span class="s1">&#39;insérer des données depuis un dictionnaire :</span>
+
+<span class="kn">import</span> <span class="nn">mysql.connector</span> 
+<span class="n">baseDeDonnees</span> <span class="o">=</span> <span class="n">mysql</span><span class="o">.</span><span class="n">connector</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="n">host</span><span class="o">=</span><span class="s2">&quot;localhost&quot;</span><span class="p">,</span><span class="n">user</span><span class="o">=</span><span class="s2">&quot;catalogue&quot;</span><span class="p">,</span><span class="n">password</span><span class="o">=</span><span class="s2">&quot;JieTh8Th&quot;</span><span class="p">,</span> <span class="n">database</span><span class="o">=</span><span class="s2">&quot;Catalogue&quot;</span><span class="p">)</span>
+<span class="n">curseur</span> <span class="o">=</span> <span class="n">baseDeDonnees</span><span class="o">.</span><span class="n">cursor</span><span class="p">()</span>
+<span class="n">produits</span> <span class="o">=</span> <span class="p">[</span>
+	<span class="p">{</span><span class="s2">&quot;reference&quot;</span><span class="p">:</span><span class="s2">&quot;EIS3P&quot;</span><span class="p">,</span> <span class="s2">&quot;nom&quot;</span><span class="p">:</span><span class="s2">&quot;Chaise de salle à manger&quot;</span><span class="p">,</span> <span class="s2">&quot;prix&quot;</span><span class="p">:</span><span class="mi">25</span><span class="p">},</span>
+	<span class="p">{</span><span class="s2">&quot;reference&quot;</span><span class="p">:</span><span class="s2">&quot;BA9KI&quot;</span><span class="p">,</span> <span class="s2">&quot;nom&quot;</span><span class="p">:</span><span class="s2">&quot;Commode blanche&quot;</span><span class="p">,</span> <span class="s2">&quot;prix&quot;</span><span class="p">:</span><span class="mf">139.90</span><span class="p">},</span>
+	<span class="p">{</span><span class="s2">&quot;reference&quot;</span><span class="p">:</span><span class="s2">&quot;OI4HE&quot;</span><span class="p">,</span> <span class="s2">&quot;nom&quot;</span><span class="p">:</span><span class="s2">&quot;Table basse&quot;</span><span class="p">,</span> <span class="s2">&quot;prix&quot;</span><span class="p">:</span><span class="mf">24.95</span><span class="p">},</span>
+	<span class="p">{</span><span class="s2">&quot;reference&quot;</span><span class="p">:</span><span class="s2">&quot;IOM9X&quot;</span><span class="p">,</span> <span class="s2">&quot;nom&quot;</span><span class="p">:</span><span class="s2">&quot;Lit double&quot;</span><span class="p">,</span> <span class="s2">&quot;prix&quot;</span><span class="p">:</span><span class="mf">699.99</span><span class="p">}</span>
+<span class="p">]</span>
+<span class="k">for</span> <span class="n">fiche</span> <span class="ow">in</span> <span class="n">produits</span><span class="p">:</span>
+	<span class="n">curseur</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="s2">&quot;INSERT INTO Produits (reference, nom, prix) VALUES (</span><span class="si">%(reference)s</span><span class="s2">, </span><span class="si">%(nom)s</span><span class="s2">, </span><span class="si">%(prix)s</span><span class="s2">)&quot;</span><span class="p">,</span> <span class="n">fiche</span><span class="p">)</span>
+<span class="n">baseDeDonnees</span><span class="o">.</span><span class="n">commit</span><span class="p">()</span>
+<span class="n">baseDeDonnees</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="recuperer-des-donnees">
+<h3>Récupérer des données<a class="headerlink" href="#recuperer-des-donnees" title="Permalink to this headline">¶</a></h3>
+<p>On peut utiliser fetchone pour récupérer le premier résultat ou retourner tous les résultats avec fetchall. Voici comment récupérer le premier résultat d’une requête SELECT.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;&gt;&gt;</span> <span class="kn">import</span> <span class="nn">mysql.connector</span> 
+<span class="o">&gt;&gt;&gt;</span> <span class="n">baseDeDonnees</span> <span class="o">=</span> <span class="n">mysql</span><span class="o">.</span><span class="n">connector</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="n">host</span><span class="o">=</span><span class="s2">&quot;localhost&quot;</span><span class="p">,</span><span class="n">user</span><span class="o">=</span><span class="s2">&quot;catalogue&quot;</span><span class="p">,</span><span class="n">password</span><span class="o">=</span><span class="s2">&quot;JieTh8Th&quot;</span><span class="p">,</span> <span class="n">database</span><span class="o">=</span><span class="s2">&quot;Catalogue&quot;</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">curseur</span> <span class="o">=</span> <span class="n">baseDeDonnees</span><span class="o">.</span><span class="n">cursor</span><span class="p">()</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">curseur</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="s2">&quot;SELECT reference, nom, prix FROM Produits&quot;</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="nb">print</span><span class="p">(</span><span class="n">curseur</span><span class="o">.</span><span class="n">fetchone</span><span class="p">())</span>
+<span class="p">(</span><span class="s1">&#39;ARB42&#39;</span><span class="p">,</span> <span class="s1">&#39;Canapé deux places noir&#39;</span><span class="p">,</span> <span class="mf">199.99</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">baseDeDonnees</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">On</span> <span class="n">peut</span> <span class="n">retourner</span> <span class="n">tous</span> <span class="n">les</span> <span class="n">résultats</span> <span class="n">avec</span> <span class="n">fetchall</span> <span class="p">:</span>
+
+<span class="o">&gt;&gt;&gt;</span> <span class="kn">import</span> <span class="nn">mysql.connector</span> 
+<span class="o">&gt;&gt;&gt;</span> <span class="n">baseDeDonnees</span> <span class="o">=</span> <span class="n">mysql</span><span class="o">.</span><span class="n">connector</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="n">host</span><span class="o">=</span><span class="s2">&quot;localhost&quot;</span><span class="p">,</span><span class="n">user</span><span class="o">=</span><span class="s2">&quot;catalogue&quot;</span><span class="p">,</span><span class="n">password</span><span class="o">=</span><span class="s2">&quot;JieTh8Th&quot;</span><span class="p">,</span> <span class="n">database</span><span class="o">=</span><span class="s2">&quot;Catalogue&quot;</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">curseur</span> <span class="o">=</span> <span class="n">baseDeDonnees</span><span class="o">.</span><span class="n">cursor</span><span class="p">()</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">curseur</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="s2">&quot;SELECT reference, nom, prix FROM Produits&quot;</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="k">for</span> <span class="n">ligne</span> <span class="ow">in</span> <span class="n">curseur</span><span class="o">.</span><span class="n">fetchall</span><span class="p">():</span>
+<span class="o">...</span>     <span class="nb">print</span><span class="p">(</span><span class="n">ligne</span><span class="p">)</span>
+<span class="o">...</span> 
+<span class="p">(</span><span class="s1">&#39;ARB42&#39;</span><span class="p">,</span> <span class="s1">&#39;Canapé deux places noir&#39;</span><span class="p">,</span> <span class="mf">199.99</span><span class="p">)</span>
+<span class="p">(</span><span class="s1">&#39;BA9KI&#39;</span><span class="p">,</span> <span class="s1">&#39;Commode blanche&#39;</span><span class="p">,</span> <span class="mf">139.9</span><span class="p">)</span>
+<span class="p">(</span><span class="s1">&#39;EIS3P&#39;</span><span class="p">,</span> <span class="s1">&#39;Chaise de salle à manger&#39;</span><span class="p">,</span> <span class="mf">25.0</span><span class="p">)</span>
+<span class="p">(</span><span class="s1">&#39;IOM9X&#39;</span><span class="p">,</span> <span class="s1">&#39;Lit double&#39;</span><span class="p">,</span> <span class="mf">699.99</span><span class="p">)</span>
+<span class="p">(</span><span class="s1">&#39;OI4HE&#39;</span><span class="p">,</span> <span class="s1">&#39;Table basse&#39;</span><span class="p">,</span> <span class="mf">24.95</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">baseDeDonnees</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        </div>
+    </div>
+    
+    
+    <div class='prev-next-bottom'>
+        
+    <a class='left-prev' id="prev-link" href="heritage_class_python.html" title="previous page">Héritage</a>
+    <a class='right-next' id="next-link" href="numpy.html" title="next page">Creation de vecteurs et des matrices</a>
+
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By The Jupyter Book community<br/>
+        
+            &copy; Copyright 2020.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    
+  <script src="_static/js/index.3da636dd464baa7582d2.js"></script>
+
+
+    
+  </body>
+</html>
